@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>sales_tax_report</id>
+    <version>1.0</version>
+    <priority>10000</priority>
+    <position>0</position>
+    <default_language>en</default_language>
+    <status>active</status>
+    <name>Sales tax report | CS-Cart team</name>
+    <supplier>A. Larionov</supplier>
+
+    <language_variables>
+        <item id="sales_report_btn" lang="en">Sales Tax Report</item>
+        <item id="reports_gen_error" lang="en">Only vendors are allowed to generate reports.</item>
+        <item id="sales_report_invoice_number" lang="en">Invoice Number</item>
+        <item id="sales_report_order_date" lang="en">Order Date</item>
+        <item id="sales_report_payment_date" lang="en">Payment Date</item>
+        <item id="sales_report_customer_name" lang="en">Customer Name</item>
+        <item id="sales_report_gross_total" lang="en">Gross Total (€)</item>
+        <item id="sales_report_platform" lang="en">Platform (€)</item>
+        <item id="sales_report_net_total" lang="en">Net Total (€)</item>
+    </language_variables>
+
+    <queries>
+        <item for="install">ALTER TABLE ?:orders ADD payment_timestamp int NOT NULL DEFAULT 0</item>
+        <item for="uninstall">ALTER TABLE ?:orders DROP COLUMN payment_timestamp</item>
+    </queries>
+</addon>
